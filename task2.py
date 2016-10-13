@@ -130,6 +130,9 @@ def search_index(num):
                     s += 1
             if minim > 0:
                 break
+
+    #print(minim)
+    #print(index)
     print(get_index(minim, index))
 
 

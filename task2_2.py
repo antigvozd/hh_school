@@ -1,6 +1,7 @@
 def search_index(num):
     minim = 0
     index = 0
+    ind = 0
     for i in range(1, len(num)+1):                  # прорабатываем все возможные распределения по разрядам
         for j in range(i):                         # и по смещениям
             #print("i=%d j=%d" % (i, j))
@@ -11,6 +12,7 @@ def search_index(num):
             s = 0
             while s < len(num):
                 if razr == "" and num[s] == "0":                    # если первая цифра разряда 0, завершаем цикл
+                    list = []
                     break
                     #pass
                 razr += num[s]
@@ -71,24 +73,24 @@ def search_index(num):
                                     j += 1
                                     l = len(list) - 1
                                     s = len(num)
-                                    print(False)
+                                    #print(False)
                                 elif l == len(list) - 1:
                                     if s == len(num) - 1:
                                         if minim == 0:
                                             minim = int(list[0])
-                                            index = j
+                                            ind = j
                                         elif int(list[l - 1]) < minim and int(list[l - 1]) > 0:
                                             minim = int(list[0])
-                                            index = j
+                                            ind = j
                                         #print(True)
                             l += 1
                 s += 1
-            print(list)
+            #print(list)
         if minim > 0:
             break
-    print(minim)
-    print(index)
-    print(get_index(minim, index))
+    #print(minim)
+    #print(ind)
+    print(get_index(minim, ind))
 
 
 def get_index(minim, index):
